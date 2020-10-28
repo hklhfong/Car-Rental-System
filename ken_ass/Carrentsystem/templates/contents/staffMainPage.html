@@ -1,0 +1,160 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Car Rental Company</title>
+		<link rel="stylesheet" href="C:\Users\WarrenCWI\Desktop\css\styles.css">
+		<script type="text/javascript" src="C:\Users\WarrenCWI\Desktop\js\script.js"></script>
+		<meta name="author" content="Siu Cheung Chung">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="Home Page">
+	</head>
+
+	<body>
+
+    	<div id="header-container">
+    	<div id="navigation-bar">
+				<ul>
+					<li><a class="active" href="index.html">Home</a>                         </li>
+					<li><a href="index.html">About</a></li>
+					<li><a href="index.html">Features</a></li>
+					<li><a href="index.html">Pricing</a></li>
+				</ul>
+			</div>
+
+    			<div id="logo">
+				<a href="index.html">
+					<img src="C:\Users\WarrenCWI\Desktop\images\carlogo.jpg" alt="logo">
+				</a>
+			</div>
+            </div>
+
+
+            	<div id="customer-service">
+			<span class="menu-click" onclick="openMenu()">
+				<img src="C:\Users\WarrenCWI\Desktop\images\MessageIcon.png" alt="menu button">
+			</span>
+
+			<div id="menu">
+				<span class="menu-click" onclick="closeMenu()">
+					<img src="C:\Users\WarrenCWI\Desktop\images\close.png" alt="close icon">
+				</span>
+				<a href="page-one.htm">Customer Service</a>
+			</div>
+
+		</div>
+
+
+
+
+			<div id="search-filter">
+				<div id="search-filter-button">
+					<ul>
+						<li><br> <br><br><br><br><br><br> <br><br><br><br> <br><button onclick="dropdownOne()" class="dropdown-button">Sort By</button>
+							<div id="dropdown-list" class="dropdown-list-content">
+								<a href= "index.html">Car Year</a>
+								<a href= "index.html">Car Type</a>
+								<a href= "index.html">Price</a>
+								<a href= "index.html">Recommendation</a>
+							</div>
+						</li>
+
+
+						<li> <br><br><br> <br><br><br><br> <br><br><br><br> <br><button onclick="dropdownTwo()" class="dropdown-button">Date</button>
+							<div id="dropdown-list-two" class="dropdown-list-content">
+								<a href= "index.html">1 - 2</a>
+								<a href= "index.html">3 - 4</a>
+								<a href= "index.html">5 - 6</a>
+								<a href= "index.html">7 - 10</a>
+								<a href= "index.html">10+</a>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+
+
+
+
+<center><form action="/action_page.php">
+  <fieldset>
+
+
+    <legend>The range of price:</legend>
+     Location: <br>
+    <input type="text" name="nameoflocation" value="">
+    <br>
+    Froms:<br>
+    <input type="text" name="price" value="">
+    <br>
+    To:<br>
+    <input type="text" name="price2" value="">
+    <br><br>
+    <input type="submit" value="Submit">
+
+
+
+
+  </fieldset>
+
+
+</form>
+
+
+
+    <center><table>
+    <tr>
+    <th>#</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Cost/Week</th>
+     </tr>
+
+    <tr>
+    <td>1</td>
+    <td>Honda</td>
+    <td>Accord</td>
+    <td>2009</td>
+    <th>$100</th>
+     </tr>
+   <tr>
+    <td>2</td>
+    <td>Toyota</td>
+    <td>Camry</td>
+    <td>2012</td>
+    <th>$122</th>
+     </tr>
+    <tr>
+    <td>3</td>
+    <td>Hyundai</td>
+    <td>Elantra</td>
+    <td>2010</td>
+    <th>$131</th>
+     </tr>
+
+       <tr>
+    <td>4</td>
+    <td>Honda</td>
+    <td>Accord</td>
+    <td>2009</td>
+    <th>$90</th>
+     </tr>
+
+       <tr>
+    <td>5</td>
+    <td>Toyota</td>
+    <td>Camry</td>
+    <td>2012</td>
+    <th>$100</th>
+     </tr>
+
+    </table>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail List</title>
+</head>
+<body>
+{% block content %}
+<div class="container-fluid">
+    {% for car in object_list %}
+        <h1>Car Infomation:</h1>
+        <h1>Id Number: {{car.car_id}}</h1>
+        <h3>Brand Name: {{car.brand_name}}</h3>
+        <h3>Type Name:{{car.type}}</h3>
+        <h3>Transmission Type:{{car.transmission}}</h3>
+        <h3>Price Per Day:{{car.price}} AUD </h3>
+        <h3>Luggage Size :{{car.car_id}} at maximum</h3>
+        <h3>Seat Number :{{car.car_id}} at maximum</h3>
+        <h3>Product Release Year :{{car.car_id}} </h3>
+        <h3>(Record ID :{{car.car_id}})</h3>
+
+        <a href = "/detail/{{car.car_id}}"> {{car.car_id}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>

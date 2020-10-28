@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}
+
+<meta charset="utf-8">
+<title>資料表修改(一)</title>
+{% endblock %}
+
+{% block content %}
+    <h2>資料表修改(一)</h2>
+
+    <form action="/edit/{{car.car_id}}/edit" method="GET" name="form1">   <!-- 建立form表單，設定傳送方式為GET，「action="/edit/{{unit.id}}/edit"」中第三個參數為edit，表示他是從<edit.html>按送出鈕傳送過來的-->
+        {% csrf_token %}     <!-- #CSRF防護請加在此 -->
+        <table border="1" cellpadding="13" cellspacing="1">
+            <tr>
+                <th>brand_name</th>
+                    <td><input type="text" id="brand_name" name="brand_name" /></td>
+            </tr>
+            <tr>
+                <th>type</th>
+                <td><input type="text" id="type" name="type" /></td>
+            </tr>
+            <tr>
+                <th>transmission</th>
+                <td><input type="text" id="transmission" name="transmission" /></td>
+            </tr>
+            <tr>
+                <th>price</th>
+                <td><input type="text" id="price" name="price" /></td>
+            </tr>
+            <tr>
+                <th>luggage_size</th>
+                <td><input type="text" id="luggage_size" name="luggage_size" /></td>
+            </tr>
+            <tr>
+                <th>seat_number</th>
+                <td><input type="text" id="seat_number" name="seat_number" /></td>
+            </tr>
+            <tr>
+                <th>release_year</th>
+                <td><input type="text" id="release_year" name="release_year" /></td>
+            </tr>
+            <tr>
+                <th colspan="2" align="center">
+                    <input type="submit" name="button" id="button" value="submit">
+                    <input type="reset" name="button2" id="button2" value="reset">
+            </tr>
+        </table>
+        <span style="color:red">{{message}}</span>
+    </form>
+{% endblock %}

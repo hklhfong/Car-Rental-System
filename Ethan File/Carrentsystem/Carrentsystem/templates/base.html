@@ -1,0 +1,50 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}base{% endblock %}</title>
+    <script type="text/javascript" src="js\script.js"></script>
+    <meta name="description" content="base">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div id="header-container">
+        <div id="navigation-bar">
+            <ul>
+                <li><a class="active" href="/home/">Home</a></li>
+                <li><a href="index.html">Special Offers</a></li>
+                <li><a href="index.html">Locations</a></li>
+                <li><a href="index.html">Customer Service</a></li>
+                {% if request.session.signed_in or request.session.staff_signed_in %}
+                    {% if request.session.signed_in %}
+                    <li><a>{{ request.session.username }}</a></li>
+                    <li><a href="/signout/">Sign out</a></li>
+                    {% endif %}
+                    {% if request.session.staff_signed_in %}
+                    <li><a>{{ request.session.staff_number }}</a></li>
+                    <li><a href="/staff_signout/">Sign out</a></li>
+                    {% endif %}
+
+
+                {% else %}
+                    <li><a href="/customer_sign_in/">Sign in</a></li>
+                    <li><a href="/customer_sign_up/">Sign up</a></li>
+                {% endif %}
+
+
+            </ul>
+        </div>
+
+        <div id="logo">
+            <a href="index.html">
+                <img src="images\carlogo.jpg" alt="logo">
+            </a>
+        </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>

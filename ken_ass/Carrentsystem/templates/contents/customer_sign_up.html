@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Customer Sign up{% endblock %}
+
+{% block content %}
+
+    <div id="sign-up-container">
+        <form action="/customer_sign_up/" method="post">
+
+            {% if notification %}
+                <div id="sign-up-notification">
+                    <center>{{ notification }}</center>
+                </div>
+            {% endif %}
+
+            {% csrf_token %}
+
+            <center>
+                Sign Up Your Account
+            </center>
+            <br>
+            <center>First Name:
+                {{ sign_up.first_name }}
+            </center>
+            <br>
+            <center>Last Name:
+                {{ sign_up.last_name }}
+            </center>
+            <br>
+            <center>Username:
+                {{ sign_up.username }}
+            </center>
+            <br>
+            <center>Password:
+                {{ sign_up.password }}
+            </center>
+            <br>
+            <center>Confirm Password:
+                {{ sign_up.repeat_password }}
+            </center>
+            <br>
+            <center>Email Address:
+                {{ sign_up.email_address }}
+            </center>
+            <br>
+            <center>Gender:
+                {{ sign_up.gender }}
+            </center>
+            <br>
+            <center>
+                <button type="signup">Sign Up</button>
+            </center>
+        </form>
+    </div>
+
+
+{% endblock %}

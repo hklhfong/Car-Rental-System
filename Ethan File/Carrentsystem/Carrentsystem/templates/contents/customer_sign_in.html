@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Customer Sign in{% endblock %}
+
+
+{% block content %}
+    <div id="sign-in-container">
+        <form action="/customer_sign_in/" method="post">
+
+            {% if notification %}
+                <div id="sign-in-notification">
+                    <center>{{ notification }}</center>
+                </div>
+            {% endif %}
+
+            {% csrf_token %}
+
+            <center>
+                Sign in
+            </center>
+            <br>
+            <center>Username:
+                {{ sign_in.username }}
+            </center>
+            <br>
+            <center>Password:
+                {{ sign_in.password }}
+            </center>
+            <br>
+            <center>
+                <button type="signin">Sign in</button>
+            </center>
+            <br>
+            <div id="switch-sign-in">
+                <a href="/staff_sign_in/">Staff Sign In</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block title %}Customer Main Page{% endblock %}
+
+{% block css %}
+	<script>
+	$(document).ready(function(){
+		$("button").on('click',function(e){
+			$("table").removeClass("d-none");
+			$("#filter").removeClass("d-none");
+		});
+	});
+	</script>
+{% endblock %}
+
+{% block content %}
+<form action="/customerMainPage/search/" target="_blank" method="post">
+	{% csrf_token %}
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			<h2>Search System</h2>
+	  <div class="row">
+		<div class="col-sm">
+		  <div class="form-group">
+    		<label>Pick Up City</label>
+      		<input id="pick_up_city" type="text" name="pick_up_city" value="{{ current_name }}">
+		  </div>
+		</div>
+		<div class="col-sm">
+			<div class="form-group">
+    			<label>Drop Off City</label>
+				<input id="drop_off_city" type="text" name="drop_off_city" value="{{ current_name }}">
+    		</select>
+		  </div>
+		</div>
+	  </div>
+	  <div class="row">
+	  </div>
+	  <div class="row">
+		<div class="col-sm">
+		 <div class="form-group">
+    			<label>PickupDate</label>
+    			<input id="pick_up_date" type="date" name="pick_up_date" class="form-control" value="{{ current_name }}">
+  			</div>
+		</div>
+		<div class="col-sm">
+		 <div class="form-group">
+    			<label>DropOffDate</label>
+    			<input id="drop_off_date" type="date" class="form-control" name="drop_off_date" value="{{ current_name }}">
+  			</div>
+		</div>
+	  </div>
+		<div class="row">
+			<div class="col-sm">
+			  <button type="submit" class="btn btn-primary">Search</button>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+</form>
+ <form method="get" id="filter">
+    {{ filter.form.as_table }}
+    <button type="submit">Filter Out</button>
+  </form>
+
+<table class="table table-bordered" id="CartableResult">
+  <thead>
+    <tr>
+      <th>Car Id</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Seat Number</th>
+      <th>Relaese Year</th>
+    </tr>
+  </thead>
+  <tbody>
+	{% for car in filter.qs %}
+    <tr>
+		<th scope="row">
+			{% load static %}
+			<img class="mr-3" src= "" alt="Product image"/>
+				<a href="/customerMainPage/{{car.car_id}}"><button class="btn btn-outline-primary">Book this one!</button></a>
+		</th>
+      <td>{{car.brand_name}} {{car.type}} {{car.transmission}}</td>
+      <td>{{car.price}}</td>
+      <td>{{car.seat_number}}</td>
+      <td>{{car.release_year}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+

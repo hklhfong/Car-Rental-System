@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+         <p>Query the price of a book:</p>
+
+     <form action="/query/" method="get">
+             Book name: <input type="text" name="book"> <br>
+             <input type="submit" value="Search">
+     </form>
+
+     <p>**********************************************</p>
+
+      <p>You searched for: <strong>{{ query }}</strong></p>
+    {% if books %}
+    <p>Found {{ books|length }} book{{ books|pluralize }}.</p>
+    <ul>
+        {% for book in books %}
+        <li>Book: <strong>{{ book.name }}</strong>,   Price: <strong>{{book.price}}</strong></li>
+        <br>
+        {% endfor %}
+    </ul>
+ {% else %}
+     <p>No books matched your search criteria.</p>
+ {% endif %}
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+      <body>
+
+      <p>**********************************************</p>
+
+      <p>Input name and price of a book:</p>
+
+      <form action="/insert/" method="get">
+             name: <input type="text" name="name"> <br>
+             price: <input type="text" name="price"> <br>
+             <input type="submit" value="Submit">
+     </form>
+
+         <p>
+         {% if name  and price%}
+              <script>alert("Insert Success")</script>
+         {% endif %}
+         </p>
+
+     <p>**********************************************</p>
+
+
+     <form action="/query/" method="get">
+31
+         0.
+
+
+         32<input type="submit" value="Search" name="book">
+     </form>
+
+     <p>**********************************************</p>
+    </head>
+
+     </body>
+ </html>

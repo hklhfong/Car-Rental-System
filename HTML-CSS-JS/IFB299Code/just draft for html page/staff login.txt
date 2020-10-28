@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Car Rental Company</title>
+		<link rel="stylesheet" href="C:\Users\WarrenCWI\Desktop\css\styles.css">
+		<script type="text/javascript" src="C:\Users\WarrenCWI\Desktop\js\script.js"></script>
+		<meta name="author" content="Siu Cheung Chung">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="Home Page">
+	</head>
+	
+	<body>
+    
+    	<div id="header-container">
+    	<div id="navigation-bar">
+				<ul>
+					<li><a class="active" href="index.html">Home</a>                         </li>
+					<li><a href="index.html">About</a></li>
+					<li><a href="index.html">Features</a></li>
+					<li><a href="index.html">Pricing</a></li>
+				</ul>
+			</div>
+    
+    			<div id="logo">
+				<a href="index.html">
+					<img src="C:\Users\WarrenCWI\Desktop\images\carlogo.jpg" alt="logo">
+				</a>
+			</div>
+            </div>
+            
+            
+
+
+
+
+<form action="/action_page.php">
+  <fieldset>
+    <center><legend>Staff Login</legend>
+    <center>Email:<br>
+    <input type="text" name="Email" value="">
+    <br>
+    <center>Password:<br>
+    <input type="text" name="Password" value="">
+    <br>
+ <td style="width: 863px"><span class="auto-style3"><strong>
+		Forgot your password</strong>	</tr>
+  
+    <br><br>
+    <input type="submit" value="Sign in">
+  </fieldset>
+</form>
+<br><br> 
+    
+    </body>
+	
+</html>

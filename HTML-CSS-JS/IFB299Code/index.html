@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Car Rental Company</title>
+		<link rel="stylesheet" href="css/styles.css">
+		<script type="text/javascript" src="js/script.js"></script>
+		<meta name="author" content="Siu Cheung Chung">
+		<meta name="robots" content="index, follow">
+		<meta name="description" content="Home Page">
+	</head>
+	
+	<body>
+	
+		<div id="header-container">
+
+			<div id="navigation-bar">
+				<ul>
+					<li><a class="active" href="index.htm">Home</a></li>
+					<li><a href="index.html">Deals</a></li>
+					<li><a href="index.html">store & location</a></li>
+					<li><a href="index.html">About</a></li>
+				</ul>
+			</div>
+				
+			<div id="logo">
+				<a href="index.html">
+					<img src="images/car_rental_logo.jpg" alt="logo">
+				</a>
+			</div>
+
+		</div>
+
+		<div id="customer-service">
+			<span class="menu-click" onclick="openMenu()">
+				<img src="images/MessageIcon.png" alt="menu button">
+			</span>
+					
+			<div id="menu">
+				<span class="menu-click" onclick="closeMenu()">
+					<img src="images/close.png" alt="close icon">
+				</span>
+				<a href="page-one.htm">Customer Service</a>
+			</div>
+			
+		</div>
+
+		<div id="content-container">
+
+			<div id="search-filter">
+				<div id="search-filter-button">
+					<ul>
+						<li> <button onclick="dropdownOne()" class="dropdown-button">Car Type</button> 
+							<div id="dropdown-list" class="dropdown-list-content">
+								<a href= "index.html">Mazda</a>
+								<a href= "index.html">Toyota</a>
+								<a href= "index.html">Mitsubushi</a>
+								<a href= "index.html">Huyndai</a>
+							</div>
+						</li>
+						
+						<li> <button onclick="dropdownTwo()" class="dropdown-button">Date</button> 
+							<div id="dropdown-list-two" class="dropdown-list-content">
+								<a href= "index.html">1 - 2</a>
+								<a href= "index.html">3 - 4</a>
+								<a href= "index.html">5 - 6</a>
+								<a href= "index.html">7 - 10</a>
+								<a href= "index.html">10+</a>
+							</div>
+						</li>
+						
+						<li> <button onclick="dropdownThree()" class="dropdown-button">Drop-in location</button> 
+							<div id="dropdown-list-three" class="dropdown-list-content">
+								<a href= "index.html">Brisbane Airport</a>
+								<a href= "index.html">Queen Street</a>
+							</div>
+						</li>
+						
+						<li> <button onclick="dropdownFour()" class="dropdown-button">Drop-off locatione</button> 
+							<div id="dropdown-list-four" class="dropdown-list-content">
+								<a href= "index.html">Brisbane Airport</a>
+								<a href= "index.html">Queen Street</a>
+							</div>
+						</li>
+						
+						<li> <button onclick="dropdownFive()" class="dropdown-button">Luggage Size</button> 
+							<div id="dropdown-list-five" class="dropdown-list-content">
+								<a href= "index.html">Two medium-sized suitcases</a>
+								<a href= "index.html">12-14 cubic feet</a>
+								<a href= "index.html">15-17 cubic feet</a>
+								<a href= "index.html">18 cubic feet</a>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+				
+				<br>
+				<div id="search-button">
+					<button>Search</button>
+				</div>
+				
+			</div>
+			
+
+			<div id="Special-Offers">
+				<h1>Special Offers</h1>
+				
+				<img src="images/carads.jpg" alt="car advertising">
+				<div id="login-button">
+					<button>Customer login</button>
+					<button>Staff login</button>
+				</div>
+
+				<img src="images/ad2.jpg" alt="car advertising">
+				
+				
+
+			</div>
+		
+			
+		</div>
+				
+		
+	</body>
+	
+</html>

@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="db.sqlite3">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.11">
+    <root id="1">
+      <ServerVersion>3.20.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="Client"/>
+    <table id="7" parent="2" name="Discount"/>
+    <table id="8" parent="2" name="DropOffStore"/>
+    <table id="9" parent="2" name="PickUpStore"/>
+    <table id="10" parent="2" name="Record"/>
+    <table id="11" parent="2" name="Rental"/>
+    <table id="12" parent="2" name="Store"/>
+    <table id="13" parent="2" name="car"/>
+    <table id="14" parent="2" name="django_migrations"/>
+    <table id="15" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="16" parent="2" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <column id="17" parent="6" name="client_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="6" name="client_name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="6" name="client_phone">
+      <Position>3</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="6" name="client_address">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="6" name="client_brithday">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="6" name="client_occupation">
+      <Position>6</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="6" name="client_gender">
+      <Position>7</Position>
+      <DataType>varchar(1)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="24" parent="6">
+      <ColNames>client_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="7" name="discount_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="7" name="discount_code">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="27" parent="7" name="starting_date">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="7" name="ending_date">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="29" parent="7">
+      <ColNames>discount_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="8" name="drop_off_store_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="8" name="store_id_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <index id="32" parent="8" name="DropOffStore_store_id_id_4ba67139">
+      <ColNames>store_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="33" parent="8">
+      <ColNames>drop_off_store_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="8">
+      <ColNames>store_id_id</ColNames>
+      <RefTableName>Store</RefTableName>
+      <RefColNames>store_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <column id="35" parent="9" name="pick_up_store_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="9" name="store_id_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <index id="37" parent="9" name="PickUpStore_store_id_id_b0df0124">
+      <ColNames>store_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="38" parent="9">
+      <ColNames>pick_up_store_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="39" parent="9">
+      <ColNames>store_id_id</ColNames>
+      <RefTableName>Store</RefTableName>
+      <RefColNames>store_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <column id="40" parent="10" name="record_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="10" name="accident_type">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="10" name="accident_address">
+      <Position>3</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="10" name="client_id_id">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <index id="44" parent="10" name="Record_client_id_id_d9ce1a03">
+      <ColNames>client_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="45" parent="10">
+      <ColNames>record_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="10">
+      <ColNames>client_id_id</ColNames>
+      <RefTableName>Client</RefTableName>
+      <RefColNames>client_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <column id="47" parent="11" name="rental_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="11" name="rent_date">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="11" name="end_rent_date">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="11" name="rent_price_total">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="51" parent="11" name="pick_up_city">
+      <Position>5</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="11" name="drop_off_city">
+      <Position>6</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="11" name="insurance_number">
+      <Position>7</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="11" name="car_id_id">
+      <Position>8</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="55" parent="11" name="client_id_id">
+      <Position>9</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="56" parent="11" name="discount_id_id">
+      <Position>10</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="57" parent="11" name="drop_off_store_id_id">
+      <Position>11</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="58" parent="11" name="pick_up_store_id_id">
+      <Position>12</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <index id="59" parent="11" name="Rental_car_id_id_e0953d62">
+      <ColNames>car_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="60" parent="11" name="Rental_client_id_id_34a780c8">
+      <ColNames>client_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="61" parent="11" name="Rental_discount_id_id_40158c37">
+      <ColNames>discount_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="62" parent="11" name="Rental_drop_off_store_id_id_fafb4fbe">
+      <ColNames>drop_off_store_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="63" parent="11" name="Rental_pick_up_store_id_id_17a1e562">
+      <ColNames>pick_up_store_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="64" parent="11">
+      <ColNames>rental_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="65" parent="11">
+      <ColNames>car_id_id</ColNames>
+      <RefTableName>car</RefTableName>
+      <RefColNames>car_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <foreign-key id="66" parent="11">
+      <ColNames>client_id_id</ColNames>
+      <RefTableName>Client</RefTableName>
+      <RefColNames>client_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <foreign-key id="67" parent="11">
+      <ColNames>discount_id_id</ColNames>
+      <RefTableName>Discount</RefTableName>
+      <RefColNames>discount_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <foreign-key id="68" parent="11">
+      <ColNames>drop_off_store_id_id</ColNames>
+      <RefTableName>DropOffStore</RefTableName>
+      <RefColNames>drop_off_store_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <foreign-key id="69" parent="11">
+      <ColNames>pick_up_store_id_id</ColNames>
+      <RefTableName>PickUpStore</RefTableName>
+      <RefColNames>pick_up_store_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <column id="70" parent="12" name="store_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="12" name="store_name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="12" name="store_address">
+      <Position>3</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="12" name="store_phone">
+      <Position>4</Position>
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="12" name="store_city">
+      <Position>5</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="12" name="store_state_name">
+      <Position>6</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="76" parent="12">
+      <ColNames>store_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="77" parent="13" name="car_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="13" name="brand_name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="13" name="type">
+      <Position>3</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="13" name="transmission">
+      <Position>4</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="13" name="price">
+      <Position>5</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="13" name="luggage_size">
+      <Position>6</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="13" name="seat_number">
+      <Position>7</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="13" name="release_year">
+      <Position>8</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="13" name="record_id_id">
+      <Position>9</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <index id="86" parent="13" name="car_record_id_id_412b9d5d">
+      <ColNames>record_id_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="87" parent="13">
+      <ColNames>car_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="88" parent="13">
+      <ColNames>record_id_id</ColNames>
+      <RefTableName>Record</RefTableName>
+      <RefColNames>record_id</RefColNames>
+      <Deferrable>1</Deferrable>
+      <InitiallyDeferred>1</InitiallyDeferred>
+    </foreign-key>
+    <column id="89" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="90" parent="14" name="app">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="14" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="14" name="applied">
+      <Position>4</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="93" parent="14">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="94" parent="15" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="95" parent="15" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="96" parent="15" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="97" parent="15" name="rootpage">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+    </column>
+    <column id="98" parent="15" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="99" parent="16" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="100" parent="16" name="seq">
+      <Position>2</Position>
+    </column>
+  </database-model>
+</dataSource>

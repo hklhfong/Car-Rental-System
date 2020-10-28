@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}
+<meta charset="utf-8">
+<title>資料表新增(一)</title>
+{% endblock %}
+
+{% block content %}
+    <h2>New data sheet(1)</h2>
+
+    <form action="." method="POST" name="form1">   <!-- "."表示執行相同的url -->
+        {% csrf_token %}
+        <table border="1" cellpadding="13" cellspacing="1">
+            <tr>
+                <th>brand_name</th>
+                    <td><input type="text" id="brand_name" name="brand_name" /></td>
+            </tr>
+            <tr>
+                <th>type</th>
+                <td><input type="text" id="type" name="type" /></td>
+            </tr>
+            <tr>
+                <th>transmission</th>
+                <td><input type="text" id="transmission" name="transmission" /></td>
+            </tr>
+            <tr>
+                <th>price</th>
+                <td><input type="text" id="price" name="price" /></td>
+            </tr>
+            <tr>
+                <th>luggage_size</th>
+                <td><input type="text" id="luggage_size" name="luggage_size" /></td>
+            </tr>
+            <tr>
+                <th>seat_number</th>
+                <td><input type="text" id="seat_number" name="seat_number" /></td>
+            </tr>
+            <tr>
+                <th>release_year</th>
+                <td><input type="text" id="release_year" name="release_year" /></td>
+            </tr>
+
+            <tr>
+                <th colspan="2" align="center">
+                    <input type="submit" name="button" id="button" value="Submit">
+                    <input type="reset" name="button2" id="button2" value="Reset">
+            </tr>
+        </table>
+        <span style="color:red">{{message}}</span>
+    </form>
+{% endblock %}

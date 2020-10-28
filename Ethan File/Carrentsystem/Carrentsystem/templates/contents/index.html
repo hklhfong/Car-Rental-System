@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+
+    <title>All information</title>{% endblock %}
+{% block content %}
+    <h2 align="left">
+        All information on data sheet
+       <a href="/post1/">Insert 1</a>
+       <a href="/post2/">Insert 2</a>
+    </h2>
+    <table border="1" cellpadding="10" cellspacing="1">
+        <th>Car_id</th>
+        <th>Brand_name</th>
+        <th>Type</th>
+        <th>Transmission</th>
+        <th>Price</th>
+        <th>Luggage_size</th>
+        <th>Seat</th>
+        <th>Release Year</th>
+        <th>Record</th>
+        {% for car in car %}
+        <tr>
+            <td>{{car.car_id}}  </td>
+            <td>{{car.brand_name}}  </td>
+            <td>{{car.type}}  </td>
+            <td>{{car.transmission}}  </td>
+            <td>{{car.price}}  </td>
+            <td>{{car.luggage_size}}  </td>
+            <td>{{car.seat_number}}  </td>
+            <td>{{car.release_year}}  </td>
+            <td>{{car.record_id_id}}  </td>
+             <td>
+                <a href="/edit/{{car.car_id}}" title="Update 1">Update 1</a>
+                <a href="/edit/{{car.car_id}}/load" title="Update 2">Update 2</a>
+                <a href="/delete/{{car.car_id}}" title="Delete">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+{% endblock %}
